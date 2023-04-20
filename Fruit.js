@@ -1,8 +1,15 @@
 const mongoose = require("mongoose");
 
 const fruitSchema = new mongoose.Schema({
-    name: String,
-    score: Number,
+    name: {
+        type: String,
+        required: [true]
+    },
+    score: {
+        type: Number,
+        min: 1,
+        max: 10
+    },
     review: String
 });
 
